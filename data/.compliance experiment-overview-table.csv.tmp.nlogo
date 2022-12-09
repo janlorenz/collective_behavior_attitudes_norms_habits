@@ -88,14 +88,9 @@ to scenario [name]
 end
 
 to write-csv
-  csv:to-file user-new-file
-  sentence (list
-    ["Parameters"]
-    ["attitude-bias" "beta-attitude" "beta-pastbehavior" "beta-conformity" "frac-random-contacts" "avg-contacts" "timeline" "N" "memory-capacity" "ticks"]
-    (list attitude-bias beta-attitude beta-pastbehavior beta-conformity frac-random-contacts avg-contacts timeline N memory-capacity ticks)
-    ["Behavior and Dynamic Utility Function Terms"]
-    ["compliant" "u_contacts" "u_past" "u_attitude"])
-    [(list masked? (2 * stat_frac-masked-others - 1) (2 * fraction-masked-past - 1) compliance-attitude)] of turtles
+
+  csv:to-file "turtles.csv" fput ["compliant" "u_contacts" "u_past" "u_attitude"] [(list masked?
+    (2 * stat_frac-masked-others - 1) (2 * fraction-masked-past - 1) compliance-attitude)] of turtles
 end
 
 ; REPORTERS
@@ -255,7 +250,7 @@ NIL
 SLIDER
 5
 230
-200
+195
 263
 beta-conformity
 beta-conformity
@@ -270,7 +265,7 @@ HORIZONTAL
 SLIDER
 5
 265
-200
+195
 298
 beta-pastbehavior
 beta-pastbehavior
@@ -368,7 +363,7 @@ attitude-bias
 attitude-bias
 -0.5
 2
-0.1
+0.05
 0.01
 1
 NIL
@@ -381,7 +376,7 @@ SWITCH
 333
 hide-links
 hide-links
-1
+0
 1
 -1000
 
@@ -478,7 +473,7 @@ frac-random-contacts
 frac-random-contacts
 0
 1
-0.2
+0.0
 0.01
 1
 NIL
@@ -798,11 +793,11 @@ NIL
 1
 
 BUTTON
-920
-355
-1080
-388
-Write Individuals CSV
+205
+330
+297
+363
+NIL
 write-csv
 NIL
 1
@@ -812,16 +807,6 @@ NIL
 NIL
 NIL
 NIL
-1
-
-TEXTBOX
-925
-395
-1175
-445
-Write a csv with\nLine 2-3 : Table with all current parameters \nLine 5-end: Table with all individuals and the last\nbehavior and dynamic utility function terms
-9
-0.0
 1
 
 @#$#@#$#@
@@ -1176,6 +1161,8 @@ NetLogo 6.3.0
     <go>go</go>
     <timeLimit steps="100"/>
     <metric>fraction-masked</metric>
+    <metric>mean stat_fraction-masked-list</metric>
+    <metric>standard-deviation stat_fraction-masked-list</metric>
     <enumeratedValueSet variable="attitude-bias">
       <value value="0"/>
       <value value="0.05"/>
@@ -1221,6 +1208,9 @@ NetLogo 6.3.0
     <enumeratedValueSet variable="memory-capacity">
       <value value="5"/>
       <value value="20"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="hide-links">
+      <value value="true"/>
     </enumeratedValueSet>
   </experiment>
 </experiments>
