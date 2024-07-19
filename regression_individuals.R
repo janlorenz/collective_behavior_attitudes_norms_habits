@@ -39,6 +39,7 @@ params |>
 turt_attfit <- logistic_reg() |>  
  set_engine("glm", family = stats::binomial(link = "probit")) |> 
  fit(factor(compliant) ~ u_attitude, data = turtles)
+turt_attfit
 # roc curve, auc, and accuracy
 turt_attfit |> predict(new_data = turtles, type = "prob") |> bind_cols(turtles) |> 
  roc_curve(truth = factor(compliant), estimate = .pred_1, event_level = "second") |> 
@@ -47,3 +48,4 @@ turt_attfit |> predict(new_data = turtles, type = "prob") |> bind_cols(turtles) 
  roc_auc(truth = factor(compliant), estimate = .pred_1, event_level = "second")
 turt_attfit |> predict(new_data = turtles, type = "class") |> bind_cols(turtles) |> 
  accuracy(truth = factor(compliant), estimate = .pred_class, event_level = "second")
+

@@ -1,3 +1,0 @@
-compliance[[:space:]]experiment-overview-table_01.csv filter=lfs diff=lfs merge=lfs -text
-compliance[[:space:]]experiment-overview-table_02.csv filter=lfs diff=lfs merge=lfs -text
-turtles.csv filter=lfs diff=lfs merge=lfs -text
