@@ -90,28 +90,18 @@ to set-baseline-other-parameters
 end
 
 to scenario [name]
+  set-baseline-other-parameters
   set N 2000
   set avg-contacts 15
   set frac-random-contacts 0.2
-  set timeline "day-night"
-  set memory-capacity 5
   set beta-conformity 0
   set beta-pastbehavior 0
-  set attitude-sd 0
-  set attitude-mean 0
-
-  if (name = "baseline") [set beta-conformity 2 set beta-pastbehavior 1 set attitude-sd 0.5 set attitude-mean 0.05]
-  ; Baseline: Small bias 0.1 in favor of compliance.
-  if (name = "0") [set attitude-mean 0.1] ;  Implies expected 0.54 fraction of behavior.
-  if (name = "0 div") [set attitude-mean 0.1 set attitude-sd 0.5] ; Implies expected 0.536 fraction of behavior.
-  ; Section: Impact of past behavior
-  if (name = "A-1") [set attitude-mean 0.1 set beta-pastbehavior 1.5] ; boosts!
-  if (name = "A-2") [set attitude-mean 0.1 set beta-pastbehavior 3] ; still boosts (even more) but takes much longer!
-  if (name = "B") [set attitude-mean 0.1 set attitude-sd 0.5 set beta-pastbehavior 1.5] ; boosts!
-  ; Section: Impact of conformity
-  if (name = "C") [set beta-conformity 1] ; still boosts (even more) but takes much longer!
-  if (name = "E") [set attitude-mean 0.1 set beta-conformity 1.5] ; boosts, strong difference in timeline "day-night"
-  if (name = "F") [set attitude-mean 0.1 set beta-conformity 3] ; boosts, strong difference in timeline "day-night"
+  set attitude-sd 1
+  set attitude-mean 0.1
+  if (name = "baseline 6 3") [set beta-conformity 6 set beta-pastbehavior 3]
+  if (name = "6 6") [set beta-conformity 6 set beta-pastbehavior 6]
+  if (name = "6 1.5") [set beta-conformity 6 set beta-pastbehavior 1.5]
+  if (name = "3 3") [set beta-conformity 3 set beta-pastbehavior 3]
   setup
 end
 
@@ -344,7 +334,7 @@ beta-conformity
 beta-conformity
 0
 10
-6.0
+0.0
 0.1
 1
 NIL
@@ -359,7 +349,7 @@ beta-pastbehavior
 beta-pastbehavior
 0
 10
-3.0
+0.0
 0.1
 1
 NIL
@@ -425,7 +415,7 @@ attitude-sd
 attitude-sd
 0
 3
-1.0
+0.0
 0.01
 1
 NIL
@@ -464,7 +454,7 @@ SWITCH
 603
 show-links
 show-links
-1
+0
 1
 -1000
 
@@ -690,10 +680,10 @@ fraction-behavior turtles - expected-fraction-behavior
 
 TEXTBOX
 770
-590
-840
-651
-Difference to expected without norm and habit
+595
+885
+635
+Difference to expected without conformity and pastbehavior
 10
 0.0
 1
