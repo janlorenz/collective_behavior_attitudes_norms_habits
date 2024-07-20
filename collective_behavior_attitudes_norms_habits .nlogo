@@ -334,7 +334,7 @@ beta-conformity
 beta-conformity
 0
 10
-0.0
+6.0
 0.1
 1
 NIL
@@ -349,7 +349,7 @@ beta-pastbehavior
 beta-pastbehavior
 0
 10
-0.0
+1.5
 0.1
 1
 NIL
@@ -415,7 +415,7 @@ attitude-sd
 attitude-sd
 0
 3
-0.0
+1.0
 0.01
 1
 NIL
@@ -620,30 +620,13 @@ Visualization parameters
 1
 
 TEXTBOX
-1205
-10
-1480
-40
-Scenarios - Work-in-Progress
+860
+205
+960
+225
+Scenarios
 18
-0.0
-1
-
-BUTTON
-1200
-110
-1255
-143
-A-1
-scenario \"A-1\"
-NIL
-1
-T
-OBSERVER
-NIL
-NIL
-NIL
-NIL
+105.0
 1
 
 MONITOR
@@ -689,12 +672,12 @@ Difference to expected without conformity and pastbehavior
 1
 
 BUTTON
-1320
-110
-1385
-143
-B
-scenario \"B\"
+855
+265
+970
+298
+6 6
+scenario \"6 6\"
 NIL
 1
 T
@@ -706,12 +689,12 @@ NIL
 1
 
 BUTTON
-1260
-110
-1315
-143
-A-2
-scenario \"A-2\"
+855
+300
+970
+333
+3 3
+scenario \"3 3\"
 NIL
 1
 T
@@ -723,12 +706,12 @@ NIL
 1
 
 BUTTON
-1210
-205
-1265
-238
-D
-scenario \"D\"
+855
+335
+970
+368
+6 1.5
+scenario \"6 1.5\"
 NIL
 1
 T
@@ -740,100 +723,12 @@ NIL
 1
 
 BUTTON
-1310
-195
-1372
-228
-E
-scenario \"E\"
-NIL
-1
-T
-OBSERVER
-NIL
-NIL
-NIL
-NIL
-1
-
-BUTTON
-1385
-195
-1447
-228
-F
-scenario \"F\"
-NIL
-1
-T
-OBSERVER
-NIL
-NIL
-NIL
-NIL
-1
-
-BUTTON
-1200
-75
-1315
-108
-base
-scenario \"0\"
-NIL
-1
-T
-OBSERVER
-NIL
-NIL
-NIL
-NIL
-1
-
-BUTTON
-1320
-75
-1385
-108
-base div
-scenario \"0 div\"
-NIL
-1
-T
-OBSERVER
-NIL
-NIL
-NIL
-NIL
-1
-
-TEXTBOX
-1390
-110
-1560
-146
-small bias with or without beta-attitude for attitude diversity
-9
-0.0
-1
-
-TEXTBOX
-1205
-150
-1355
-168
-Conformity
-12
-0.0
-1
-
-BUTTON
-1210
-170
-1265
-203
-C
-scenario \"C\"
+855
+230
+970
+263
+baseline 6 3
+scenario \"baseline 6 3\"
 NIL
 1
 T
