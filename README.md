@@ -13,4 +13,4 @@ NetLogo model and reproducible data generation and analysis code for the paper
 
 `analysis.R` makes some aggregate figures with the large datasets in the data directory
 
-Web verions (slow): https://netlogoweb.org/web?https://raw.githubusercontent.com/janlorenz/collective_behavior_attitudes_norms_habits/main/collective_behavior_attitudes_norms_habits%20.nlogo
+Web verions (slow, use fewer agents like 500): https://netlogoweb.org/web?https://raw.githubusercontent.com/janlorenz/collective_behavior_attitudes_norms_habits/main/collective_behavior_attitudes_norms_habits%20.nlogo
