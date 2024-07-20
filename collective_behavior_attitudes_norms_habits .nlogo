@@ -74,8 +74,9 @@ to visualize
     set hidden? not show-agents
   ]
   ask patches [
+    let turtset (turtle-set turtles-here turtles-on neighbors)
     set pcolor (ifelse-value
-      (patch-color = "average-attitude") [scale-color-diverging mean [attitude-mean + attitude-sd * compliance-attitude] of (turtle-set turtles-here turtles-on neighbors) color-max]
+        (patch-color = "average-attitude") [ifelse-value (count turtset > 0) [scale-color-diverging mean [attitude-mean + attitude-sd * compliance-attitude] of turtset color-max] [white]]
       (patch-color = "white") [white]
       [black])
   ]
@@ -349,7 +350,7 @@ beta-pastbehavior
 beta-pastbehavior
 0
 10
-1.5
+3.0
 0.1
 1
 NIL
